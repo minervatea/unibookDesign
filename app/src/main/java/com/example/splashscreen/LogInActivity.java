@@ -11,8 +11,8 @@ public class LogInActivity extends SwipeAdapter {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_log_in);
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_log_in);
 
     }
 
@@ -23,6 +23,7 @@ public class LogInActivity extends SwipeAdapter {
 
     @Override
     protected void onSwipeLeft() {
+        startActivity(new Intent(this, TimeTable.class));
 
     }
 

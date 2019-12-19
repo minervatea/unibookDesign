@@ -14,7 +14,11 @@ import android.widget.TextView;
 import com.r0adkll.slidr.Slidr;
 import com.r0adkll.slidr.model.SlidrInterface;
 
-public class TimeTable extends Fragment {
+public class TimeTable extends AppCompatActivity{
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_time_table);
 
-
+    }
 }

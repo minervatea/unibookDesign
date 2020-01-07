@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.r0adkll.slidr.Slidr;
 import com.r0adkll.slidr.model.SlidrInterface;
 
+// first Fragment
 public class TimeTable extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {

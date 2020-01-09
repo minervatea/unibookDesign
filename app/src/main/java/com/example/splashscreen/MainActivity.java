@@ -1,25 +1,32 @@
 package com.example.splashscreen;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
 
-import com.r0adkll.slidr.Slidr;
-import com.r0adkll.slidr.model.SlidrInterface;
+import com.google.android.material.tabs.TabLayout;
 
 // first Fragment
-public class TimeTable extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity{
+
+
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+    private ViewPagerAdapter viewPagerAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_time_table);
+        setContentView(R.layout.activity_main);
 
+
+        tabLayout = findViewById(R.id.tabLayout);
+        viewPager = findViewById(R.id.ViewPager);
+        viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+
+        tabLayout.setupWithViewPager(viewPager);
+
+        viewPager.setAdapter(viewPagerAdapter);
     }
 }

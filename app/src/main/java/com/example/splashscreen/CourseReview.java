@@ -1,27 +1,22 @@
 package com.example.splashscreen;
 
-
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+
+public class CourseReview extends Fragment{
 
 
-/**
- * A simple {@link Fragment} subclass.
- */
-public class DemoFragment extends Fragment {
-
-
-    private TextView textView;
-    public DemoFragment() {
+    public CourseReview() {
         // Required empty public constructor
+
+
     }
 
 
@@ -30,13 +25,8 @@ public class DemoFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
 
-        View v = inflater.inflate(R.layout.fragment_demo, container, false);
-
-        textView=v.findViewById(R.id.textView);
-        String data = getArguments().getString("key");
-        textView.setText(data);
+        View v = inflater.inflate(R.layout.fragment_course_review, container, false);
 
         return v;
     }
-
 }

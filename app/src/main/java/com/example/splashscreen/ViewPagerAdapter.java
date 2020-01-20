@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import java.sql.Time;
+
 public class ViewPagerAdapter extends FragmentPagerAdapter {
     public ViewPagerAdapter(@NonNull FragmentManager fm) {
         super(fm);
@@ -17,12 +19,20 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
 
-        DemoFragment demoFragment = new DemoFragment();
-        Bundle bundle = new Bundle();
-        position = position+1;
-        bundle.putString("key",""+position);
-        demoFragment.setArguments(bundle);
-        return demoFragment;
+        switch (position) {
+            case 0:
+                return new TimetableFragment(); //new TimetableFragment();
+
+            case 1:
+                return new CourseReview();  // This is going to be replaced with second fragment
+            case 2:
+                return new TimetableFragment();// This is going to be replaced with third fragment
+            case 3:
+                return new TimetableFragment();// This is going to be replaced with fourth fragment
+            default:
+                return null; // This should never happen. Always account for each position above.
+        }
+
     }
 
     @Override
@@ -30,9 +40,9 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
         return 4;
     }
 
-    @Nullable
+   /* @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
         return ""+position+1;
-    }
+    } */
 }

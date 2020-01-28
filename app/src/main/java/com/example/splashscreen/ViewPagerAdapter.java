@@ -22,7 +22,6 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
         switch (position) {
             case 0:
                 return new TimetableFragment(); //new TimetableFragment();
-
             case 1:
                 return new CourseReview();  // This is going to be replaced with second fragment
             case 2:

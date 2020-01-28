@@ -37,12 +37,11 @@ public class MainActivity extends AppCompatActivity{
     public void buttonClick(View v){
         switch(v.getId()){
             case R.id.createTable:
-                Intent myIntent = new Intent();
-                myIntent.setClassName(PACKAGE_NAME, CourseReview.class.toString());
-
-                startActivity(myIntent);
-             break;
+                Intent intent = new Intent(MainActivity.this, CreateTimeTable.class);
+                startActivity(intent);
+                break;
 
         }
     }
 }
+

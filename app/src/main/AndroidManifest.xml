@@ -21,6 +21,9 @@
             android:name=".MainActivity"
             android:theme="@style/AppTheme.slidrActivityTheme" />
         <activity android:name=".CreateTimeTable"
+
+            />
+        <activity android:name=".CourseReview"
             />
     </application>
 

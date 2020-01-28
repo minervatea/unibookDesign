@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">SplashScreen</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name = "courses">
+        <item>COMP1710</item>
+        <item>COMP1730</item>
+        <item>COMP3600</item>
+        <item>COMP3900</item>
+        <item>COMP2100</item>
+    </string-array>
 </resources>

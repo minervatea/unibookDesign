@@ -2,12 +2,15 @@ package com.example.splashscreen;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
+
+    /** columns in the database, you can see it visually by using DB Browser for SQL **/
 
     public static final String DATABASE_NAME = "courses.db";
     public static final String TABLE_NAME = "course_table";
@@ -30,6 +33,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(sqLiteDatabase);
     }
 
+    /** This inserts data from user input to the database **/
     public boolean insertData(String coursename){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -39,5 +43,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return false;
     else
         return true;
+    }
+
+    /** View all data that has been added **/
+    public Cursor getAllData(){
+        /** Cursor class : This interface provides random read-wrtie access to the result set returned by a database query **/
+        /** This will get the database and show it to user **/
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("select * from " + TABLE_NAME, null); // what's cursor class?
+        return res;
+    }
+
+    /** built-in database delete method returns an integer **/
+    public Integer deleteData (String courseName){
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABLE_NAME, "NAME = ?",new String[] {courseName});
+
     }
 }
